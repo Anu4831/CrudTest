@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center mb-5">List of Customers</h2>
+
+
+<div class="container">
+    <div class="row" id="indexModal">
+        <div class="col-8 offset-2">
+            <div>
+                <div class="row mb-5">
+                    <div class="col">
+                        <a class="btn btn-primary" asp-controller="Customer" asp-action="Create">Add Customer</a>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="text-center">
+                    <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Province</th>
+                            <th>District</th>
+                            <th>Municipality</th>
+                            <th>Ward No</th>
+                            <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tblCustomer" class="text-center">
+                </tbody>
+             </table>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/js/customer.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Call the initialization function for Model A
+            GetCustomerData();
+        });
+    </script>
+}
